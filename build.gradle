@@ -8,13 +8,33 @@
 apply plugin: "java"
 apply plugin: "checkstyle"
 
-repositories { jcenter() }
-dependencies {
-    testCompile 'junit:junit:4.12'
-    compile 'junit:junit:4.12'
+checkstyle {
+    toolVersion = "8.8"
+
+    project.ext.checkstyleVersion = '8.9'
+    project.ext.sevntuChecksVersion = '1.29.0'
+    repositories { jcenter() }
+
+
+
+    ignoreFailures = true
+    configFile = file("${project.rootDir}/checkstyle.xml")
+    checkstyleMain {
+        source = sourceSets.main.allSource
+    }
+
+    configurations {
+        checkstyle
+    }
+
+    dependencies {
+        assert project.hasProperty("checkstyleVersion")
+
+        testCompile 'junit:junit:4.12'
+        compile 'junit:junit:4.12'
+    }
+
+
+    buildDir = 'dankbuild/wow'
 
 }
-
-
-
-buildDir = 'dankbuild/wow'
