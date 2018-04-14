@@ -17,7 +17,7 @@ checkstyle {
     repositories { jcenter() }
 
     ignoreFailures = true
-    configFile = file("${project.rootDir}/checkstyle.xml")
+    configFile = file("${project.rootDir}/priostyle.xml")
 
     checkstyleMain {
         source = sourceSets.main.allSource

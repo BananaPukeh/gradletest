@@ -110,16 +110,16 @@ class GUI implements UseCaseHandler {
     // -----------------------
     // The list of use case names, so we can compare
     // objects rather than strings later.
-    static final String ucnNewZoo = "new zoo";
-    static final String ucnLoadZoo = "load zoo";
-    static final String ucnSaveZoo = "save zoo";
-    static final String ucnAddAnimal = "add animal";
-    static final String ucnRemoveAnimal = "remove animal";
-    static final String ucnShowAnimals = "show animals";
-    static final String ucnAddEmployee = "add employee";
-    static final String ucnRemoveEmployee = "remove employee";
-    static final String ucnShowEmployees = "show employees";
-    static final String ucnShowCosts = "show costs";
+    static final String UCN_NEW_ZOO = "new zoo";
+    static final String UCN_LOAD_ZOO = "load zoo";
+    static final String UCN_SAVE_ZOO = "save zoo";
+    static final String UCN_ADD_ANIMAL = "add animal";
+    static final String UCN_REMOVE_ANIMAL = "remove animal";
+    static final String UCN_SHOW_ANIMALS = "show animals";
+    static final String UCN_ADD_EMPLOYEE = "add employee";
+    static final String UCN_REMOVE_EMPLOYEE = "remove employee";
+    static final String UCN_SHOW_EMPLOYEES = "show employees";
+    static final String UCN_SHOW_COSTS = "show costs";
     // ==========================================
     // Code to check the 'asserts-enabled' status
     public static boolean java_assert_enabled = false;
@@ -161,27 +161,27 @@ class GUI implements UseCaseHandler {
         // Define the set of use cases
         useCaseSet = new UseCaseSet(name + " menu", this);
         {
-            useCaseSet.addUseCase(ucnNewZoo);
-            useCaseSet.addUseCase(ucnLoadZoo);
+            useCaseSet.addUseCase(UCN_NEW_ZOO);
+            useCaseSet.addUseCase(UCN_LOAD_ZOO);
 
-            useCaseSet.addUseCase(ucnAddAnimal);
-            useCaseSet.addUseCase(ucnRemoveAnimal);
+            useCaseSet.addUseCase(UCN_ADD_ANIMAL);
+            useCaseSet.addUseCase(UCN_REMOVE_ANIMAL);
             {
-                useCaseSet.disableUseCase(ucnRemoveAnimal);
+                useCaseSet.disableUseCase(UCN_REMOVE_ANIMAL);
             }
-            useCaseSet.addUseCase(ucnShowAnimals);
+            useCaseSet.addUseCase(UCN_SHOW_ANIMALS);
 
-            useCaseSet.addUseCase(ucnAddEmployee);
-            useCaseSet.addUseCase(ucnRemoveEmployee);
+            useCaseSet.addUseCase(UCN_ADD_EMPLOYEE);
+            useCaseSet.addUseCase(UCN_REMOVE_EMPLOYEE);
             {
-                useCaseSet.disableUseCase(ucnRemoveEmployee);
+                useCaseSet.disableUseCase(UCN_REMOVE_EMPLOYEE);
             }
-            useCaseSet.addUseCase(ucnShowEmployees);
-            useCaseSet.addUseCase(ucnShowCosts);
+            useCaseSet.addUseCase(UCN_SHOW_EMPLOYEES);
+            useCaseSet.addUseCase(UCN_SHOW_COSTS);
 
-            useCaseSet.addUseCase(ucnSaveZoo);
+            useCaseSet.addUseCase(UCN_SAVE_ZOO);
             {
-                useCaseSet.disableUseCase(ucnSaveZoo);
+                useCaseSet.disableUseCase(UCN_SAVE_ZOO);
             }
         }
         // ... now show the menu
@@ -213,25 +213,25 @@ class GUI implements UseCaseHandler {
             // Just in case the user has dismissed the output window
             reporter.setVisible(true);
 
-            if (useCaseName == ucnNewZoo)
+            if (useCaseName == UCN_NEW_ZOO)
                 newZoo();
-            else if (useCaseName == ucnLoadZoo)
+            else if (useCaseName == UCN_LOAD_ZOO)
                 loadFile();
-            else if (useCaseName == ucnAddAnimal)
+            else if (useCaseName == UCN_ADD_ANIMAL)
                 addAnimal();
-            else if (useCaseName == ucnRemoveAnimal)
+            else if (useCaseName == UCN_REMOVE_ANIMAL)
                 removeAnimal();
-            else if (useCaseName == ucnShowAnimals)
+            else if (useCaseName == UCN_SHOW_ANIMALS)
                 zoo.showAnimals();
-            else if (useCaseName == ucnAddEmployee)
+            else if (useCaseName == UCN_ADD_EMPLOYEE)
                 addEmployee();
-            else if (useCaseName == ucnRemoveEmployee)
+            else if (useCaseName == UCN_REMOVE_EMPLOYEE)
                 removeEmployee();
-            else if (useCaseName == ucnShowEmployees)
+            else if (useCaseName == UCN_SHOW_EMPLOYEES)
                 zoo.showEmployees();
-            else if (useCaseName == ucnShowCosts)
+            else if (useCaseName == UCN_SHOW_COSTS)
                 zoo.showCosts();
-            else if (useCaseName == ucnSaveZoo)
+            else if (useCaseName == UCN_SAVE_ZOO)
                 saveFile();
             else
                 // oops, forgot a usecase!
@@ -265,7 +265,7 @@ class GUI implements UseCaseHandler {
     private void addAnimal() {
         assert zoo != null : "Cannot add an animal to a null zoo";
 
-        Questioner question = new Questioner(ucnAddAnimal);
+        Questioner question = new Questioner(UCN_ADD_ANIMAL);
         question.addString("kind");
         question.addString("name");
         question.addInt("age");
@@ -280,8 +280,8 @@ class GUI implements UseCaseHandler {
                 zoo.addAnimal(new Animal(animalKind, animalName, animalAge));
                 // did status changed?
                 if (zoo.hasAnimals()) {
-                    useCaseSet.enableUseCase(ucnRemoveAnimal);
-                    useCaseSet.enableUseCase(ucnSaveZoo);
+                    useCaseSet.enableUseCase(UCN_REMOVE_ANIMAL);
+                    useCaseSet.enableUseCase(UCN_SAVE_ZOO);
                 }
                 break;
             }
@@ -297,7 +297,7 @@ class GUI implements UseCaseHandler {
             return;
         }
 
-        Questioner question = new Questioner(ucnRemoveAnimal);
+        Questioner question = new Questioner(UCN_REMOVE_ANIMAL);
         question.addString("kind");
         question.addString("name");
 
@@ -309,9 +309,9 @@ class GUI implements UseCaseHandler {
                 zoo.removeAnimal(animalKind, animalName);
                 // did status changed?
                 if (!zoo.hasAnimals()) {
-                    useCaseSet.disableUseCase(ucnRemoveAnimal);
+                    useCaseSet.disableUseCase(UCN_REMOVE_ANIMAL);
                     if (!zoo.hasEmployees())
-                        useCaseSet.disableUseCase(ucnSaveZoo);
+                        useCaseSet.disableUseCase(UCN_SAVE_ZOO);
                 }
                 break;
             }
@@ -330,7 +330,7 @@ class GUI implements UseCaseHandler {
         // What kind of employee ?
         String[] categories = {"--type--", "manager", "administrator", "zookeeper"};
 
-        Questioner question = new Questioner(ucnAddEmployee);
+        Questioner question = new Questioner(UCN_ADD_EMPLOYEE);
         question.addChoice("type", categories);
         question.addInt("number");
         question.addString("name");
@@ -380,8 +380,8 @@ class GUI implements UseCaseHandler {
         zoo.addEmployee(employeeNumber, employee);
         // did status changed?
         if (zoo.hasEmployees()) {
-            useCaseSet.enableUseCase(ucnRemoveEmployee);
-            useCaseSet.enableUseCase(ucnSaveZoo);
+            useCaseSet.enableUseCase(UCN_REMOVE_EMPLOYEE);
+            useCaseSet.enableUseCase(UCN_SAVE_ZOO);
         }
     } // addEmployee
 
@@ -408,7 +408,7 @@ class GUI implements UseCaseHandler {
             return;
         }
 
-        Questioner question = new Questioner(ucnRemoveEmployee);
+        Questioner question = new Questioner(UCN_REMOVE_EMPLOYEE);
         question.addInt("number");
 
         while (!question.isCancelled()) {
@@ -418,9 +418,9 @@ class GUI implements UseCaseHandler {
                 zoo.removeEmployee(employeeNumber);
                 // did status changed?
                 if (!zoo.hasEmployees()) {
-                    useCaseSet.disableUseCase(ucnRemoveEmployee);
+                    useCaseSet.disableUseCase(UCN_REMOVE_EMPLOYEE);
                     if (!zoo.hasAnimals())
-                        useCaseSet.disableUseCase(ucnSaveZoo);
+                        useCaseSet.disableUseCase(UCN_SAVE_ZOO);
                 }
                 break;
             }
@@ -430,9 +430,9 @@ class GUI implements UseCaseHandler {
     private void newZoo() {
         String name = zoo.getName();
         zoo = new Zoo(name);
-        useCaseSet.disableUseCase(ucnRemoveAnimal);
-        useCaseSet.disableUseCase(ucnRemoveEmployee);
-        useCaseSet.disableUseCase(ucnSaveZoo);
+        useCaseSet.disableUseCase(UCN_REMOVE_ANIMAL);
+        useCaseSet.disableUseCase(UCN_REMOVE_EMPLOYEE);
+        useCaseSet.disableUseCase(UCN_SAVE_ZOO);
         System.out.println("-----------------\nCreated a new zoo");
     }
 
@@ -467,12 +467,12 @@ class GUI implements UseCaseHandler {
                         System.out.println(animals + " animals and " + employees + " employees loaded\n");
                         // did status changed?
                         if (zoo.hasAnimals()) {
-                            useCaseSet.enableUseCase(ucnRemoveAnimal);
-                            useCaseSet.enableUseCase(ucnSaveZoo);
+                            useCaseSet.enableUseCase(UCN_REMOVE_ANIMAL);
+                            useCaseSet.enableUseCase(UCN_SAVE_ZOO);
                         }
                         if (zoo.hasEmployees()) {
-                            useCaseSet.enableUseCase(ucnRemoveEmployee);
-                            useCaseSet.enableUseCase(ucnSaveZoo);
+                            useCaseSet.enableUseCase(UCN_REMOVE_EMPLOYEE);
+                            useCaseSet.enableUseCase(UCN_SAVE_ZOO);
                         }
                         return;
 
