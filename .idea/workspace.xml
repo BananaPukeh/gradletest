@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98eaf807-26c7-4939-8daa-2d4cc317e284" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/priostyle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AdministratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AdministratorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -32,7 +29,29 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gradletest" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gradletest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gradletest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gradletest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -41,44 +60,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdministratorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/AdministratorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1439">
-              <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="331">
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="priostyle.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/priostyle.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkstyle.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/checkstyle.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="54" column="8" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="62" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -155,6 +144,11 @@
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Run Checkstyle analysis for test classes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="checkstyleTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Displays all buildscript dependencies declared in root project 'gradletest'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
@@ -175,6 +169,16 @@
                 <option name="name" value="javadoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Run Checkstyle analysis for main classes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="checkstyleMain" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run FindBugs analysis for main classes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="findbugsMain" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles a jar archive containing the main classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="jar" />
@@ -193,6 +197,11 @@
                 <option name="description" value="Displays the tasks runnable from root project 'gradletest'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run FindBugs analysis for test classes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="findbugsTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Initializes a new Gradle build." />
@@ -271,9 +280,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6090392514000" />
+        <entry key="$PROJECT_DIR$" value="6090396136000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="598597765" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="4012956406" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2958664235" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="4182543934" />
       </map>
@@ -484,10 +493,10 @@
         <option value="$PROJECT_DIR$/src/test/java/KeeperTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ManagerTest.java" />
         <option value="$PROJECT_DIR$/checkstyle.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/GUI.java" />
         <option value="$PROJECT_DIR$/src/test/java/AdministratorTest.java" />
         <option value="$PROJECT_DIR$/priostyle.xml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -568,19 +577,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zoo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gradletest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gradletest" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="gradletest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gradletest" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -660,7 +656,7 @@
         <option name="vmOptions" value="" />
       </ExternalSystemSettings>
     </configuration>
-    <configuration name="gradletest [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="gradletest [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -671,7 +667,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="dependencies" />
+            <option value="check" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -763,19 +759,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.gradletest [build]" />
-      <item itemvalue="Gradle.gradletest [dependencies]" />
       <item itemvalue="Gradle.gradletest [dependencyInsight]" />
       <item itemvalue="Gradle.gradletest [buildEnvironment]" />
       <item itemvalue="Gradle.gradletest [help]" />
+      <item itemvalue="Gradle.gradletest [check]" />
+      <item itemvalue="Gradle.gradletest [build]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.gradletest [build]" />
+        <item itemvalue="Gradle.gradletest [check]" />
         <item itemvalue="Gradle.gradletest [help]" />
         <item itemvalue="Gradle.gradletest [buildEnvironment]" />
         <item itemvalue="Gradle.gradletest [dependencyInsight]" />
-        <item itemvalue="Gradle.gradletest [dependencies]" />
-        <item itemvalue="Gradle.gradletest [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -790,12 +786,44 @@
       <option name="presentableId" value="Default" />
       <updated>1522227044663</updated>
       <workItem from="1522227048661" duration="1551000" />
-      <workItem from="1523708469883" duration="5870000" />
+      <workItem from="1523708469883" duration="8600000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 24m 51s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 37m 06s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 38m 58s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 40m 03s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 40m 27s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 40m 40s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 43m 12s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 43m 31s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 44m 14s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="gradletest_[check] - 2018.04.14 at 16h 44m 37s.xml">
+      <configuration name="gradletest [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7421000" />
+    <option name="totallyTimeSpent" value="10151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="973" extended-state="6" />
@@ -820,7 +848,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49943376" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38844848" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Gradle" order="3" visible="true" weight="0.17738095" />
@@ -911,21 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2645">
           <caret line="122" column="41" selection-start-line="122" selection-start-column="41" selection-end-line="122" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2092" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,16 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/AdministratorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1439">
@@ -1153,14 +1156,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/priostyle.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="759">
+          <caret line="33" column="54" lean-forward="true" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-43" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="gradleExecuteTaskHistory">
     <option value="$PROJECT_DIR$" />
+    <option value="check --stacktrace" />
     <option value="build" />
     <option value="buidl" />
   </component>
