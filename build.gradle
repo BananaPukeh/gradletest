@@ -8,6 +8,7 @@
 apply plugin: "java"
 apply plugin: "checkstyle"
 apply plugin: 'findbugs'
+apply plugin: "jacoco"
 
 checkstyle {
     toolVersion = "8.9"
@@ -34,8 +35,8 @@ checkstyle {
         testCompile 'junit:junit:4.12'
         compile 'junit:junit:4.12'
     }
-    buildDir = 'dankbuild/wow'
 
+    buildDir = 'dankbuild/wow'
 }
 
 findbugs {
@@ -46,5 +47,16 @@ findbugs {
             xml.enabled = false
             html.enabled = true
         }
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.0"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = false
+        csv.enabled = false
     }
 }
