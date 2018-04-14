@@ -1,8 +1,8 @@
 // ===============================================================
-//			THERE IS NO NEED TO CHANGE THIS FILE
-//		  UNLESS YOU ADD OR REMOVE EXISTING CLASSES
-//		   WHICH SHOULD NOT HAPPEN BEFORE PART 3
-//		             OF YOUR ASSIGNMENT
+//	THERE IS NO NEED TO CHANGE THIS FILE
+//  UNLESS YOU ADD OR REMOVE EXISTING CLASSES
+//	WHICH SHOULD NOT HAPPEN BEFORE PART 3
+//	OF YOUR ASSIGNMENT
 // ===============================================================
 //
 // Change  3.1:
@@ -107,29 +107,6 @@ class GUI implements UseCaseHandler {
             "good.txt", "bad.txt",
             "good-spare.txt", "bad-spare.txt"
     };
-
-
-    // The Main entry point
-    public static void main(String[] args) {
-
-//		/* PLEASE IGNORE THIS CODE */
-//		try {
-//			String current = new java.io.File(".").getCanonicalPath();
-//			System.out.println("Current dir:" + current);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		System.out.println("Current dir using System:" + System.getProperty("user.dir"));
-//		/* END IGNORED CODE */
-
-        new GUI("Drienerlo"); // launch the gui
-    }
-
-    // The instance variables
-    private Reporter reporter; // the window for System.out
-    private UseCaseSet useCaseSet; // the use-cases menu
-    private Zoo zoo; // the zoo being handled
-
     // -----------------------
     // The list of use case names, so we can compare
     // objects rather than strings later.
@@ -143,7 +120,18 @@ class GUI implements UseCaseHandler {
     static final String ucnRemoveEmployee = "remove employee";
     static final String ucnShowEmployees = "show employees";
     static final String ucnShowCosts = "show costs";
+    // ==========================================
+    // Code to check the 'asserts-enabled' status
+    public static boolean java_assert_enabled = false;
 
+    static {
+        assert java_assert_enabled = true; // mis-using a side-effect here !
+    }
+
+    // The instance variables
+    private Reporter reporter; // the window for System.out
+    private UseCaseSet useCaseSet; // the use-cases menu
+    private Zoo zoo; // the zoo being handled
 
     private GUI(String name) {
         // Create an output window ...
@@ -200,6 +188,24 @@ class GUI implements UseCaseHandler {
         useCaseSet.setVisible(true);
     }
 
+    // The Main entry point
+    public static void main(String[] args) {
+
+//		/* PLEASE IGNORE THIS CODE */
+//		try {
+//			String current = new java.io.File(".").getCanonicalPath();
+//			System.out.println("Current dir:" + current);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println("Current dir using System:" + System.getProperty("user.dir"));
+//		/* END IGNORED CODE */
+
+        new GUI("Drienerlo"); // launch the gui
+    }
+
+    // -------------------
+
     @Override
     // The use-case menu callback handler
     public void handleUseCase(String useCaseName) {
@@ -237,6 +243,8 @@ class GUI implements UseCaseHandler {
         }
     }
 
+    // ----------
+
     // Internal function to print a partial stacktrace on a printstream
     private void printThrowable(Throwable e, PrintStream dest) {
         dest.println("------------");
@@ -252,7 +260,7 @@ class GUI implements UseCaseHandler {
         dest.println("------------\nYour program continues ...\n------------");
     }
 
-    // -------------------
+    // ====================
 
     private void addAnimal() {
         assert zoo != null : "Cannot add an animal to a null zoo";
@@ -279,8 +287,6 @@ class GUI implements UseCaseHandler {
             }
         }
     } // addAnimal
-
-    // ----------
 
     private void removeAnimal() {
         assert zoo != null : "Cannot remove an animal from a null zoo";
@@ -311,8 +317,6 @@ class GUI implements UseCaseHandler {
             }
         }
     } // removeAnimal
-
-    // ====================
 
     private void addEmployee() {
         assert zoo != null : "Cannot add an employee to a null zoo";
@@ -381,6 +385,9 @@ class GUI implements UseCaseHandler {
         }
     } // addEmployee
 
+    // ======================================================================
+    // The code to save or load zoo data or create a new one
+
     // internal assist function
     private void assignManager(Employee employee) {
         assert zoo != null : "Trying to attach an employee to a manager in a null zoo";
@@ -419,9 +426,6 @@ class GUI implements UseCaseHandler {
             }
         }
     } // removeEmployee
-
-    // ======================================================================
-    // The code to save or load zoo data or create a new one
 
     private void newZoo() {
         String name = zoo.getName();
@@ -567,14 +571,5 @@ class GUI implements UseCaseHandler {
             System.err.println("Oops, can not make " + the_savefile);
         }
     } // saveFile
-
-
-    // ==========================================
-    // Code to check the 'asserts-enabled' status
-    public static boolean java_assert_enabled = false;
-
-    static {
-        assert java_assert_enabled = true; // mis-using a side-effect here !
-    }
 
 }
