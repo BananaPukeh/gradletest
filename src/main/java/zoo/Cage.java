@@ -10,8 +10,7 @@ import java.io.PrintWriter;
  * 
  * @author R.Akkersdijk
  */
-public class Cage
-{
+public class Cage {
 	// The kind of animals in this cage
 	private final String the_kind;
 

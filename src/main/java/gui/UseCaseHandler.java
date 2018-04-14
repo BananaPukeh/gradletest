@@ -7,12 +7,11 @@ package gui;
  */
 public interface UseCaseHandler {
 
-	/**
-	 * Called with the name of the selected usecase.
-	 * 
-	 * @param useCaseName
-	 *            The name of this usecase.
-	 */
-	void handleUseCase(String useCaseName);
+    /**
+     * Called with the name of the selected usecase.
+     *
+     * @param useCaseName The name of this usecase.
+     */
+    void handleUseCase(String useCaseName);
 
 }
